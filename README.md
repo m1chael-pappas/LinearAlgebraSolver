@@ -59,7 +59,8 @@ pip install numpy sympy
 ### Basic Usage
 
 ```python
-from linear_solver import LinearAlgebraSolver
+# Import from whatever you named your Python file
+from your_solver_file import LinearAlgebraSolver
 
 # Create solver instance
 solver = LinearAlgebraSolver()
@@ -81,13 +82,15 @@ solver.create_sample_files()
 
 ```bash
 # Process all JSON files in directory
-python3 linear_solver.py
+python3 main.py
 
-# Or use convenience functions
-python3 -c "from linear_solver import solve_file; solve_file('example_1_3_6.json')"
-python3 -c "from linear_solver import list_files; list_files()"
-python3 -c "from linear_solver import batch_solve_all; batch_solve_all()"
+# Or use convenience functions (replace with your actual filename)
+python3 -c "from your_solver_file import solve_file; solve_file('example_1_3_6.json')"
+python3 -c "from your_solver_file import list_files; list_files()"
+python3 -c "from your_solver_file import batch_solve_all; batch_solve_all()"
 ```
+
+````
 
 ## JSON File Format
 
@@ -95,16 +98,13 @@ python3 -c "from linear_solver import batch_solve_all; batch_solve_all()"
 
 ```json
 {
-  "problem_name": "Your Problem Name",
-  "problem_type": "homogeneous|system|parametric",
-  "description": "Problem description",
-  "matrix_A": [
-    [1, 2, 3],
-    [4, 5, 6]
-  ],
-  "vector_b": [7, 8]
+    "problem_name": "Your Problem Name",
+    "problem_type": "homogeneous|system|parametric",
+    "description": "Problem description",
+    "matrix_A": [[1, 2, 3], [4, 5, 6]],
+    "vector_b": [7, 8]
 }
-```
+````
 
 ### Problem Types
 
@@ -255,14 +255,14 @@ x = t_1 * [3, 1, 0, 0, 0] + t_2 * [-2, 0, -6, 1, 0] + t_3 * [-2, 0, 1, 0, 1]
 
 ```
 linear-algebra-solver/
-├── linear_solver.py          # Main solver code
-├── README.md                 # This file
+├── main.py                 # Main solver code
+├── README.md                # This file
 ├── LICENSE                   # MIT License
 ├── .gitignore               # Git ignore rules
 ├── requirements.txt         # Python dependencies
-├── example_1_3_6.json      # Sample homogeneous system
-├── sample_system.json      # Sample linear system
-└── parametric_system.json  # Sample parametric system
+├── example_1_3_6.json       # Sample homogeneous system
+├── sample_system.json       # Sample linear system
+└── parametric_system.json      # Sample parametric system
 ```
 
 ## Educational Use
